@@ -1,22 +1,22 @@
 import '../styles/globals.css'
-import { Lato } from 'next/font/google';
-import localFont from 'next/font/local';
+import { Lato, Cinzel } from 'next/font/google'
 
 const lato = Lato({
   subsets: ['latin'],
   weight: ['300', '400', '700'],
   variable: '--font-lato',
-});
+})
 
-const trajan = localFont({
-  src: '/fonts/TrajanPro-Regular.ttf',
-  variable: '--font-trajan',
-});
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-cinzel',
+})
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <div className={`${lato.variable} ${trajan.variable}`}>
+    <div className={`${lato.variable} ${cinzel.variable}`}>
       <Component {...pageProps} />
     </div>
-  );
+  )
 }
