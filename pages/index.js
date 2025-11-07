@@ -1,106 +1,80 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import Head from 'next/head'
+import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="bg-[#f9f8f6] text-[#2e3d34] font-sans">
+    <main className="bg-blanco-lino text-gris-piedra font-sans">
       <Head>
         <title>Alturas Camposanto</title>
-        <meta name="description" content="Un camposanto moderno, sereno y rodeado de naturaleza en San Antonio de Desamparados." />
-        <meta property="og:title" content="Alturas Camposanto" />
-        <meta property="og:description" content="Un lugar de reflexión, belleza y legado para quienes amamos." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/hero.jpg" />
+        <meta name="description" content="Camposanto moderno, natural y sereno en San Antonio de Desamparados, Costa Rica." />
       </Head>
 
       {/* NAV */}
-      <header className="fixed top-0 left-0 right-0 z-20 bg-white/60 backdrop-blur border-b border-[#2e3d34]/10">
+      <header className="fixed top-0 left-0 right-0 z-20 bg-blanco-lino/90 backdrop-blur-md border-b border-gris-piedra/10">
         <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Image src="/images/logo.png" alt="Alturas Camposanto" width={34} height={34} />
-            <span className="font-serif text-lg">Alturas Camposanto</span>
+            <span className="font-serif text-verde-camposanto text-lg tracking-wide">Alturas Camposanto</span>
           </div>
           <div className="hidden md:flex gap-6 text-sm">
-            <a href="#sobre-nosotros" className="hover:opacity-80">Nosotros</a>
-            <a href="#servicios" className="hover:opacity-80">Espacios</a>
-            <a href="#como-comprar" className="hover:opacity-80">Cómo comprar</a>
-            <a href="#galeria" className="hover:opacity-80">Galería</a>
+            <a href="#sobre-nosotros" className="hover:text-verde-camposanto transition">Nosotros</a>
+            <a href="#servicios" className="hover:text-verde-camposanto transition">Espacios</a>
+            <a href="#como-comprar" className="hover:text-verde-camposanto transition">Cómo comprar</a>
+            <a href="#galeria" className="hover:text-verde-camposanto transition">Galería</a>
           </div>
         </nav>
       </header>
 
       {/* HERO */}
       <section className="relative h-[92vh] flex items-center justify-center text-center bg-[url('/images/hero.jpg')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0 bg-[#4A765A]/50 mix-blend-multiply" />
         <div className="relative z-10 px-6">
-          <h1 className="text-4xl md:text-6xl font-serif text-white mb-4">La paz comienza hoy</h1>
-          <p className="text-white/95 max-w-3xl mx-auto mb-8 text-base md:text-lg leading-relaxed">
-            En Alturas Camposanto honramos la vida en un entorno natural, moderno y sereno.
-            Un lugar de reflexión, belleza y legado para quienes amamos.
+          <h1 className="text-4xl md:text-6xl font-serif text-white mb-4 drop-shadow-md">La paz comienza hoy</h1>
+          <p className="text-white/95 max-w-3xl mx-auto mb-8 text-base md:text-lg leading-relaxed drop-shadow">
+            Honramos la vida en un entorno natural y sereno. Un lugar de reflexión, belleza y legado.
           </p>
-          <a
-            href="#sobre-nosotros"
-            className="inline-block bg-[#4a5d4e] text-white px-6 py-3 rounded-2xl hover:bg-[#3b4d40] transition"
-          >
+          <a href="#sobre-nosotros" className="inline-block bg-verde-camposanto text-white px-6 py-3 rounded-2xl hover:bg-[#3b5f4c] transition">
             Conoce nuestro Camposanto
           </a>
         </div>
       </section>
 
       {/* SOBRE NOSOTROS */}
-      <section id="sobre-nosotros" className="py-20 px-6 lg:px-8">
+      <section id="sobre-nosotros" className="py-24 px-6 lg:px-8 bg-verde-lino/30">
         <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h2 className="text-3xl font-serif mb-4">Un lugar donde la memoria florece</h2>
-            <p className="mb-5">
-              Alturas Camposanto nació del deseo de ofrecer un entorno humano, digno y natural para honrar a quienes amamos.
-              Acompañamos a las familias con calidez y claridad en decisiones importantes.
+            <h2 className="text-3xl font-serif text-verde-camposanto mb-4">Un lugar donde la memoria florece</h2>
+            <p className="mb-5 text-gris-piedra">
+              Alturas Camposanto nació para ofrecer un entorno humano, digno y natural. Nuestra misión es acompañar con
+              empatía y claridad a las familias que buscan tranquilidad y respeto.
             </p>
             <ul className="space-y-2 text-sm">
-              <li><span className="font-semibold">Visión:</span> ser el referente de serenidad y respeto en San Antonio.</li>
-              <li><span className="font-semibold">Misión:</span> acompañar con cercanía, empatía y transparencia.</li>
-              <li><span className="font-semibold">Valores:</span> respeto, dignidad, armonía con la naturaleza.</li>
+              <li><span className="font-semibold text-verde-camposanto">Visión:</span> ser el referente de serenidad y respeto.</li>
+              <li><span className="font-semibold text-verde-camposanto">Misión:</span> acompañar con cercanía y dignidad.</li>
+              <li><span className="font-semibold text-verde-camposanto">Valores:</span> respeto, armonía, humanidad.</li>
             </ul>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow">
-            <Image
-              src="/images/about.jpg"
-              alt="Vista panorámica del camposanto"
-              width={900}
-              height={600}
-              className="object-cover w-full h-full"
-            />
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <Image src="/images/about.jpg" alt="Vista panorámica" width={900} height={600} className="object-cover w-full h-full" />
           </div>
         </div>
       </section>
 
-      {/* ESPACIOS */}
-      <section id="servicios" className="bg-[#e6e2d3] py-20 px-6 lg:px-8">
+      {/* SERVICIOS */}
+      <section id="servicios" className="bg-[#EDEFEA] py-24 px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-serif mb-10 text-center">Nuestros espacios</h2>
+          <h2 className="text-3xl font-serif text-center text-verde-camposanto mb-12">Nuestros espacios</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              {
-                title: 'Nichos sencillos y dobles',
-                img: '/images/nichos.jpg',
-                text: 'Espacios íntimos rodeados de jardines, diseñados para ofrecer tranquilidad y permanencia.',
-              },
-              {
-                title: 'Columbarios',
-                img: '/images/columbarios.jpg',
-                text: 'Estructuras sobrias para conservar urnas con cenizas, en áreas ajardinadas y tranquilas.',
-              },
-              {
-                title: 'Árboles de Vida',
-                img: '/images/arboles.jpg',
-                text: 'Una opción ecológica y simbólica: las cenizas descansan bajo un árbol que crece como homenaje vivo.',
-              },
+              { title: 'Nichos sencillos y dobles', img: '/images/nichos.jpg', text: 'Espacios íntimos rodeados de jardines para ofrecer tranquilidad y permanencia.' },
+              { title: 'Columbarios', img: '/images/columbarios.jpg', text: 'Estructuras sobrias para conservar urnas con cenizas, rodeadas de áreas verdes.' },
+              { title: 'Árboles de Vida', img: '/images/arboles.jpg', text: 'Opción ecológica: las cenizas descansan bajo un árbol, símbolo de continuidad.' },
             ].map((s) => (
-              <div key={s.title} className="bg-white rounded-xl shadow overflow-hidden">
+              <div key={s.title} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
                 <Image src={s.img} alt={s.title} width={700} height={460} className="h-56 w-full object-cover" />
                 <div className="p-5">
-                  <h3 className="font-serif text-lg mb-1">{s.title}</h3>
-                  <p className="text-sm text-[#2e3d34]/80">{s.text}</p>
+                  <h3 className="font-serif text-lg text-verde-camposanto mb-1">{s.title}</h3>
+                  <p className="text-sm text-gris-piedra/90">{s.text}</p>
                 </div>
               </div>
             ))}
@@ -108,70 +82,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CÓMO COMPRAR (solo texto e imágenes; sin formulario ni precios) */}
-      <section id="como-comprar" className="py-20 px-6 lg:px-8">
+      {/* CÓMO COMPRAR */}
+      <section id="como-comprar" className="py-24 px-6 lg:px-8 bg-blanco-lino">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-serif mb-6">Cómo comprar</h2>
-          <p className="text-[#2e3d34]/85 max-w-3xl mx-auto mb-10">
-            Te guiamos con amabilidad y claridad: agenda una visita, elige el espacio ideal y formaliza tu reserva.
-            Recibirás la documentación de propiedad y confirmación de tu espacio.
+          <h2 className="text-3xl font-serif text-verde-camposanto mb-6">Cómo comprar</h2>
+          <p className="text-gris-piedra/85 max-w-3xl mx-auto mb-10">
+            Te guiamos con amabilidad y claridad. Agenda una visita, elige el espacio ideal y formaliza tu reserva. 
+            Recibirás tu documentación y la tranquilidad de un espacio eterno.
           </p>
-          <div className="grid md:grid-cols-4 gap-6 text-left max-w-4xl mx-auto">
-            {[
-              'Escríbenos o llámanos.',
-              'Agenda una visita.',
-              'Elige tu espacio.',
-              'Recibe tu documento de propiedad.',
-            ].map((t, i) => (
-              <div key={i} className="bg-white rounded-xl shadow p-5">
-                <div className="h-8 w-8 rounded-full bg-[#4a5d4e] text-white flex items-center justify-center font-bold mb-3">
+          <div className="grid md:grid-cols-4 gap-6 text-left">
+            {['Escríbenos o llámanos', 'Agenda una visita', 'Elige tu espacio', 'Recibe tu documento'].map((t, i) => (
+              <div key={i} className="bg-verde-lino/60 rounded-xl shadow p-5">
+                <div className="h-8 w-8 rounded-full bg-verde-camposanto text-white flex items-center justify-center font-bold mb-3">
                   {i + 1}
                 </div>
                 <p className="text-sm">{t}</p>
               </div>
             ))}
           </div>
-          <div className="mt-10">
-            <a href="#galeria" className="inline-block bg-[#4a5d4e] text-white px-6 py-3 rounded-2xl hover:bg-[#3b4d40] transition">
-              Ver imágenes del lugar
-            </a>
-          </div>
         </div>
       </section>
 
       {/* GALERÍA */}
-      <section id="galeria" className="bg-[#f4f3f0] py-20 px-6 lg:px-8">
+      <section id="galeria" className="bg-verde-lino/25 py-24 px-6 lg:px-8">
         <div className="mx-auto max-w-6xl text-center">
-          <h2 className="text-3xl font-serif mb-6">La serenidad en cada detalle</h2>
-          <p className="max-w-3xl mx-auto mb-10 text-[#2e3d34]/80">
-            Nuestros jardines, senderos y áreas de descanso fueron concebidos para ofrecer paz y belleza natural.
+          <h2 className="text-3xl font-serif text-verde-camposanto mb-8">La serenidad en cada detalle</h2>
+          <p className="max-w-3xl mx-auto mb-12 text-gris-piedra/80">
+            Nuestros jardines y senderos fueron concebidos para ofrecer paz y belleza natural.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[1,2,3,4,5,6].map((i) => (
               <div key={i} className="rounded-xl overflow-hidden shadow">
-                <Image
-                  src={`/images/gallery${i}.jpg`}
-                  alt={`Vista ${i}`}
-                  width={800}
-                  height={600}
-                  className="w-full h-64 object-cover"
-                />
+                <Image src={`/images/gallery${i}.jpg`} alt={`Vista ${i}`} width={800} height={600} className="w-full h-64 object-cover" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FOOTER simple */}
-      <footer className="py-10 px-6 border-t border-[#2e3d34]/10">
-        <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4">
+      {/* FOOTER */}
+      <footer className="py-10 px-6 border-t border-gris-piedra/10 bg-white">
+        <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
           <div className="flex items-center gap-3">
             <Image src="/images/logo.png" alt="Alturas Camposanto" width={28} height={28} />
-            <span className="text-sm">Alturas Camposanto · San Antonio de Desamparados</span>
+            <span className="font-serif text-verde-camposanto">Alturas Camposanto</span>
           </div>
-          <span className="text-xs text-[#2e3d34]/60">© {new Date().getFullYear()} Alturas Camposanto. Todos los derechos reservados.</span>
+          <span className="text-xs text-gris-piedra/70">© {new Date().getFullYear()} Alturas Camposanto · San Antonio de Desamparados</span>
         </div>
       </footer>
     </main>
-  );
+  )
 }
