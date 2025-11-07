@@ -9,7 +9,7 @@ const lato = Lato({
 });
 
 const trajan = localFont({
-  src: '../public/fonts/TrajanPro-Regular.ttf',
+  src: '/fonts/TrajanPro-Regular.ttf',
   variable: '--font-trajan',
 });
 
