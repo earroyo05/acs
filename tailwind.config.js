@@ -1,4 +1,8 @@
 module.exports = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -8,8 +12,8 @@ module.exports = {
         'blanco-lino': '#F7F7F7',
       },
       fontFamily: {
-        serif: ['"Trajan Pro"', 'serif'],
-        sans: ['Lato', 'sans-serif'],
+        serif: ['var(--font-cinzel)', 'serif'],
+        sans: ['var(--font-lato)', 'sans-serif'],
       },
     },
   },
