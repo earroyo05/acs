@@ -26,7 +26,7 @@ export default function Home() {
       </header>
 
       {/* HERO */}
-      <section className="relative h-[92vh] flex items-center justify-center text-center bg-[url('/images/hero.jpg')] bg-cover bg-center">
+      <section className="relative min-h-[764px] max-h-[90vh] flex items-center justify-center text-center bg-[url('/images/hero.jpg')] bg-cover bg-center">
         <div className="absolute inset-0 bg-[#4A765A]/50 mix-blend-multiply" />
         <div className="relative z-10 px-6">
           <h1 className="text-4xl md:text-6xl font-serif text-white mb-4 drop-shadow-md">La paz comienza hoy</h1>
