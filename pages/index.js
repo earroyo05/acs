@@ -85,20 +85,86 @@ export default function Home() {
           <p className="text-gris-piedra/80 mb-8">
             Si deseas más información o agendar una visita, déjanos tus datos y nos pondremos en contacto contigo.
           </p>
-          <form action="https://getform.io/f/bolzprza" method="POST" className="grid gap-4 text-left">
-            <input type="text" name="nombre" placeholder="Nombre completo" required
-              className="p-3 rounded-lg border border-gris-piedra/20 focus:outline-none focus:ring-2 focus:ring-verde-camposanto"/>
-            <input type="email" name="email" placeholder="Correo electrónico" required
-              className="p-3 rounded-lg border border-gris-piedra/20 focus:outline-none focus:ring-2 focus:ring-verde-camposanto"/>
-            <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje..."
-              className="p-3 rounded-lg border border-gris-piedra/20 focus:outline-none focus:ring-2 focus:ring-verde-camposanto"></textarea>
-            <button type="submit"
-              className="bg-verde-camposanto text-white py-3 rounded-2xl hover:bg-[#3b5f4c] transition">
-              Enviar mensaje
-            </button>
-          </form>
-        </div>
-      </section>
+         <form
+  action="https://getform.io/f/bolzprza"
+  method="POST"
+  onSubmit={(e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { Accept: 'application/json' },
+    })
+      .then(() => {
+        const message = document.createElement('div');
+        message.textContent = 'Gracias, hemos recibido tu mensaje.';
+        message.className =
+          'mt-4 text-verde-camposanto font-medium text-center bg-verde-lino/50 p-3 rounded-lg shadow-inner animate-fadeIn';
+        form.replaceWith(message);
+      })
+      .catch(() => {
+        alert('Ocurrió un error al enviar el mensaje. Por favor inténtalo más tarde.');
+      });
+  }}
+  className="grid gap-4 text-left"
+>
+  {/* Nombre */}
+  <input
+    type="text"
+    name="nombre"
+    placeholder="Nombre completo"
+    required
+    className="p-3 rounded-lg border border-gris-piedra/20 focus:outline-none focus:ring-2 focus:ring-verde-camposanto"
+  />
+
+  {/* Correo */}
+  <input
+    type="email"
+    name="email"
+    placeholder="Correo electrónico"
+    required
+    className="p-3 rounded-lg border border-gris-piedra/20 focus:outline-none focus:ring-2 focus:ring-verde-camposanto"
+  />
+
+  {/* Intereses */}
+  <div className="p-3 rounded-lg border border-gris-piedra/20 bg-white">
+    <p className="mb-2 font-semibold text-verde-camposanto">Seleccione los productos de su interés:</p>
+    <label className="flex items-center gap-2 mb-1">
+      <input type="checkbox" name="interes" value="Nicho Sencillo" className="accent-verde-camposanto" />
+      Nicho Sencillo
+    </label>
+    <label className="flex items-center gap-2 mb-1">
+      <input type="checkbox" name="interes" value="Nicho Doble" className="accent-verde-camposanto" />
+      Nicho Doble
+    </label>
+    <label className="flex items-center gap-2 mb-1">
+      <input type="checkbox" name="interes" value="Columbario" className="accent-verde-camposanto" />
+      Columbario
+    </label>
+    <label className="flex items-center gap-2">
+      <input type="checkbox" name="interes" value="Árbol de Vida" className="accent-verde-camposanto" />
+      Árbol de Vida
+    </label>
+  </div>
+
+  {/* Mensaje */}
+  <textarea
+    name="mensaje"
+    rows="4"
+    placeholder="Escribe tu mensaje (opcional)..."
+    className="p-3 rounded-lg border border-gris-piedra/20 focus:outline-none focus:ring-2 focus:ring-verde-camposanto"
+  ></textarea>
+
+  {/* Botón */}
+  <button
+    type="submit"
+    className="bg-verde-camposanto text-white py-3 rounded-2xl hover:bg-[#3b5f4c] transition"
+  >
+    Enviar mensaje
+  </button>
+</form>
 
       {/* MAPA */}
       <section className="py-20 px-6 lg:px-8 bg-blanco-lino">
@@ -107,7 +173,7 @@ export default function Home() {
           <p className="text-gris-piedra/80 mb-6">Alturas Camposanto · San Antonio de Desamparados, Costa Rica</p>
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15736.871991614947!2d-84.0523853!3d9.8777002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fcb5dfe02b3f%3A0x8f3dc1a592ebc839!2sAlturas%20Camposanto!5e0!3m2!1ses!2scr!4v1731360625002!5m2!1ses!2scr"
+              src="https://maps.app.goo.gl/iETFsRurW16ZGaJTA"
               width="100%"
               height="400"
               style={{ border: 0 }}
