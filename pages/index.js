@@ -137,23 +137,25 @@ export default function Home() {
 
       {/* MAPA */}
       <section className="py-20 px-6 lg:px-8 bg-white">
-        <div className="mx-auto max-w-6xl text-center">
-          <h2 className="text-2xl font-serif text-[#4A765A] mb-4">Cómo llegar</h2>
-          <p className="text-[#717A76]/80 mb-6">Alturas Camposanto · San Antonio de Desamparados, Costa Rica</p>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <iframe
-              src="https://maps.app.goo.gl/ZfhTCDreDffA8dF67"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Alturas Camposanto Ubicación"
-            ></iframe>
-          </div>
-        </div>
-      </section>
+  <div className="mx-auto max-w-6xl text-center">
+    <h2 className="text-2xl font-serif text-[#4A765A] mb-4">Cómo llegar</h2>
+    <p className="text-[#717A76]/80 mb-6">
+      Alturas Camposanto · San Antonio de Desamparados, Costa Rica
+    </p>
+    <div className="rounded-2xl overflow-hidden shadow-lg">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.226073897774!2d-84.07380642510866!3d9.86888849024495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e3ec38129a7f%3A0x8cdd226b0387b3dc!2sAlturas%20Camposanto!5e0!3m2!1ses!2scr!4v1731376100000!5m2!1ses!2scr"
+        width="100%"
+        height="400"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Alturas Camposanto Ubicación"
+      ></iframe>
+    </div>
+  </div>
+</section>
 
       {/* FOOTER */}
       <footer className="py-10 px-6 border-t border-[#717A76]/10 bg-white">
@@ -170,7 +172,7 @@ export default function Home() {
 
       {/* BOTÓN FLOTANTE WHATSAPP */}
       <a
-        href="https://wa.me/5067275002"
+        href="https://wa.me/5067275003"
         className="fixed bottom-6 right-6 bg-[#25D366] text-white rounded-full p-4 shadow-lg hover:scale-105 transition"
         target="_blank"
         rel="noopener noreferrer"
