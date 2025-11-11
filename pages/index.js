@@ -21,20 +21,21 @@ export default function Home() {
             <a href="#servicios" className="hover:text-verde-camposanto transition">Espacios</a>
             <a href="#como-comprar" className="hover:text-verde-camposanto transition">Cómo comprar</a>
             <a href="#galeria" className="hover:text-verde-camposanto transition">Galería</a>
+            <a href="#contacto" className="hover:text-verde-camposanto transition">Contáctanos</a>
           </div>
         </nav>
       </header>
 
       {/* HERO */}
-      <section className="relative min-h-[764px] max-h-[90vh] flex items-center justify-center text-center bg-[url('/images/hero.jpg')] bg-cover bg-center">
+      <section className="relative h-[92vh] flex items-center justify-center text-center bg-[url('/images/hero.jpg')] bg-cover bg-center">
         <div className="absolute inset-0 bg-[#4A765A]/50 mix-blend-multiply" />
         <div className="relative z-10 px-6">
           <h1 className="text-4xl md:text-6xl font-serif text-white mb-4 drop-shadow-md">La paz comienza hoy</h1>
           <p className="text-white/95 max-w-3xl mx-auto mb-8 text-base md:text-lg leading-relaxed drop-shadow">
             Honramos la vida en un entorno natural y sereno. Un lugar de reflexión, belleza y legado.
           </p>
-          <a href="#sobre-nosotros" className="inline-block bg-verde-camposanto text-white px-6 py-3 rounded-2xl hover:bg-[#3b5f4c] transition">
-            Conoce nuestro Camposanto
+          <a href="#contacto" className="inline-block bg-verde-camposanto text-white px-6 py-3 rounded-2xl hover:bg-[#3b5f4c] transition">
+            Contáctanos
           </a>
         </div>
       </section>
@@ -48,11 +49,6 @@ export default function Home() {
               Alturas Camposanto nació para ofrecer un entorno humano, digno y natural. Nuestra misión es acompañar con
               empatía y claridad a las familias que buscan tranquilidad y respeto.
             </p>
-            <ul className="space-y-2 text-sm">
-              <li><span className="font-semibold text-verde-camposanto">Visión:</span> ser el referente de serenidad y respeto.</li>
-              <li><span className="font-semibold text-verde-camposanto">Misión:</span> acompañar con cercanía y dignidad.</li>
-              <li><span className="font-semibold text-verde-camposanto">Valores:</span> respeto, armonía, humanidad.</li>
-            </ul>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <Image src="/images/about.jpg" alt="Vista panorámica" width={900} height={600} className="object-cover w-full h-full" />
@@ -82,40 +78,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CÓMO COMPRAR */}
-      <section id="como-comprar" className="py-24 px-6 lg:px-8 bg-blanco-lino">
+      {/* FORMULARIO DE CONTACTO */}
+      <section id="contacto" className="py-24 px-6 lg:px-8 bg-verde-lino/25">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-serif text-verde-camposanto mb-6">Cómo comprar</h2>
-          <p className="text-gris-piedra/85 max-w-3xl mx-auto mb-10">
-            Te guiamos con amabilidad y claridad. Agenda una visita, elige el espacio ideal y formaliza tu reserva. 
-            Recibirás tu documentación y la tranquilidad de un espacio eterno.
+          <h2 className="text-3xl font-serif text-verde-camposanto mb-6">Contáctanos</h2>
+          <p className="text-gris-piedra/80 mb-8">
+            Si deseas más información o agendar una visita, déjanos tus datos y nos pondremos en contacto contigo.
           </p>
-          <div className="grid md:grid-cols-4 gap-6 text-left">
-            {['Escríbenos o llámanos', 'Agenda una visita', 'Elige tu espacio', 'Recibe tu documento'].map((t, i) => (
-              <div key={i} className="bg-verde-lino/60 rounded-xl shadow p-5">
-                <div className="h-8 w-8 rounded-full bg-verde-camposanto text-white flex items-center justify-center font-bold mb-3">
-                  {i + 1}
-                </div>
-                <p className="text-sm">{t}</p>
-              </div>
-            ))}
-          </div>
+          <form action="https://getform.io/f/bolzprza" method="POST" className="grid gap-4 text-left">
+            <input type="text" name="nombre" placeholder="Nombre completo" required
+              className="p-3 rounded-lg border border-gris-piedra/20 focus:outline-none focus:ring-2 focus:ring-verde-camposanto"/>
+            <input type="email" name="email" placeholder="Correo electrónico" required
+              className="p-3 rounded-lg border border-gris-piedra/20 focus:outline-none focus:ring-2 focus:ring-verde-camposanto"/>
+            <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje..."
+              className="p-3 rounded-lg border border-gris-piedra/20 focus:outline-none focus:ring-2 focus:ring-verde-camposanto"></textarea>
+            <button type="submit"
+              className="bg-verde-camposanto text-white py-3 rounded-2xl hover:bg-[#3b5f4c] transition">
+              Enviar mensaje
+            </button>
+          </form>
         </div>
       </section>
 
-      {/* GALERÍA */}
-      <section id="galeria" className="bg-verde-lino/25 py-24 px-6 lg:px-8">
+      {/* MAPA */}
+      <section className="py-20 px-6 lg:px-8 bg-blanco-lino">
         <div className="mx-auto max-w-6xl text-center">
-          <h2 className="text-3xl font-serif text-verde-camposanto mb-8">La serenidad en cada detalle</h2>
-          <p className="max-w-3xl mx-auto mb-12 text-gris-piedra/80">
-            Nuestros jardines y senderos fueron concebidos para ofrecer paz y belleza natural.
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[1,2,3,4,5,6].map((i) => (
-              <div key={i} className="rounded-xl overflow-hidden shadow">
-                <Image src={`/images/gallery${i}.jpg`} alt={`Vista ${i}`} width={800} height={600} className="w-full h-64 object-cover" />
-              </div>
-            ))}
+          <h2 className="text-2xl font-serif text-verde-camposanto mb-4">Cómo llegar</h2>
+          <p className="text-gris-piedra/80 mb-6">Alturas Camposanto · San Antonio de Desamparados, Costa Rica</p>
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15736.871991614947!2d-84.0523853!3d9.8777002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fcb5dfe02b3f%3A0x8f3dc1a592ebc839!2sAlturas%20Camposanto!5e0!3m2!1ses!2scr!4v1731360625002!5m2!1ses!2scr"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Alturas Camposanto Ubicación"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -130,6 +130,16 @@ export default function Home() {
           <span className="text-xs text-gris-piedra/70">© {new Date().getFullYear()} Alturas Camposanto · San Antonio de Desamparados</span>
         </div>
       </footer>
+
+      {/* BOTÓN FLOTANTE DE WHATSAPP */}
+      <a href="https://wa.me/50672375002"
+        className="fixed bottom-6 right-6 bg-[#25D366] text-white rounded-full p-4 shadow-lg hover:scale-105 transition"
+        target="_blank" rel="noopener noreferrer"
+        title="Contáctanos por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6">
+          <path d="M20.52 3.48A11.75 11.75 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.17 1.6 6.01L0 24l6.16-1.6A11.96 11.96 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52zM12 22.1c-1.76 0-3.48-.46-5.01-1.34l-.36-.2-3.64.95.97-3.55-.23-.37A9.82 9.82 0 0 1 2.1 12c0-5.46 4.44-9.9 9.9-9.9 2.64 0 5.12 1.03 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.46-4.44 9.9-9.9 9.9zm4.94-7.2c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.6.14-.17.27-.69.88-.84 1.06-.15.17-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.31-1.56-1.47-1.83-.15-.27-.02-.41.12-.55.12-.12.27-.31.4-.46.13-.15.17-.27.25-.46.08-.17.04-.34-.02-.48-.06-.14-.6-1.44-.82-1.97-.22-.52-.44-.45-.6-.46h-.51c-.17 0-.48.07-.73.34s-.95.93-.95 2.28.98 2.64 1.12 2.82c.14.17 1.92 2.92 4.64 4.09.65.28 1.16.45 1.55.58.65.21 1.24.18 1.7.11.52-.08 1.6-.66 1.82-1.3.22-.64.22-1.19.15-1.3-.07-.11-.25-.18-.52-.32z"/>
+        </svg>
+      </a>
     </main>
   )
 }
