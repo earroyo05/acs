@@ -132,7 +132,7 @@ export default function Home() {
       </footer>
 
       {/* BOTÓN FLOTANTE DE WHATSAPP */}
-      <a href="https://wa.me/50672375002"
+      <a href="https://wa.me/50672375003"
         className="fixed bottom-6 right-6 bg-[#25D366] text-white rounded-full p-4 shadow-lg hover:scale-105 transition"
         target="_blank" rel="noopener noreferrer"
         title="Contáctanos por WhatsApp">
